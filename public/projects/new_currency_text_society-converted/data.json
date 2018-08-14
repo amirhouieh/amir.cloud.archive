@@ -1,0 +1,32 @@
+[
+  null,
+  null,
+  null,
+  null,
+  null,
+  {
+    "filename": "index",
+    "dirname": "html",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 150243,
+      "size": 5470,
+      "blocks": 16,
+      "atimeMs": 1532262258000,
+      "mtimeMs": 1390449018000,
+      "ctimeMs": 1522966912000,
+      "birthtimeMs": 1386166269000,
+      "atime": "2018-07-22T12:24:18.000Z",
+      "mtime": "2014-01-23T03:50:18.000Z",
+      "ctime": "2018-04-05T22:21:52.000Z",
+      "birthtime": "2013-12-04T14:11:09.000Z"
+    }
+  },
+  null
+]

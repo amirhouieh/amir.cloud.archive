@@ -1,0 +1,32 @@
+[
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  {
+    "filename": "proccess/gif",
+    "dirname": "proccess/gif",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 205922,
+      "size": 105931,
+      "blocks": 208,
+      "atimeMs": 1532260660000,
+      "mtimeMs": 1524255842000,
+      "ctimeMs": 1524255842000,
+      "birthtimeMs": 1524247576000,
+      "atime": "2018-07-22T11:57:40.000Z",
+      "mtime": "2018-04-20T20:24:02.000Z",
+      "ctime": "2018-04-20T20:24:02.000Z",
+      "birthtime": "2018-04-20T18:06:16.000Z"
+    }
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "filename": "filtertext_ed1.pdf",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 198966,
+      "size": 9650,
+      "blocks": 24,
+      "atimeMs": 1532274770000,
+      "mtimeMs": 1432626654000,
+      "ctimeMs": 1522146326000,
+      "birthtimeMs": 1432626654000,
+      "atime": "2018-07-22T15:52:50.000Z",
+      "mtime": "2015-05-26T07:50:54.000Z",
+      "ctime": "2018-03-27T10:25:26.000Z",
+      "birthtime": "2015-05-26T07:50:54.000Z"
+    }
+  },
+  {
+    "filename": "filtertext_individual_talks.pdf",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 198968,
+      "size": 28805,
+      "blocks": 64,
+      "atimeMs": 1532274770000,
+      "mtimeMs": 1433234620000,
+      "ctimeMs": 1522146326000,
+      "birthtimeMs": 1433234620000,
+      "atime": "2018-07-22T15:52:50.000Z",
+      "mtime": "2015-06-02T08:43:40.000Z",
+      "ctime": "2018-03-27T10:25:26.000Z",
+      "birthtime": "2015-06-02T08:43:40.000Z"
+    }
+  },
+  {
+    "filename": "monospace_1.pdf",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 200065,
+      "size": 1432172,
+      "blocks": 2800,
+      "atimeMs": 1532262701000,
+      "mtimeMs": 1429603499000,
+      "ctimeMs": 1522146328000,
+      "birthtimeMs": 1429601333000,
+      "atime": "2018-07-22T12:31:41.000Z",
+      "mtime": "2015-04-21T08:04:59.000Z",
+      "ctime": "2018-03-27T10:25:28.000Z",
+      "birthtime": "2015-04-21T07:28:53.000Z"
+    }
+  },
+  null
+]

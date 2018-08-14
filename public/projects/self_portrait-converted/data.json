@@ -1,0 +1,28 @@
+[
+  null,
+  {
+    "filename": "PDF-sound_and_light.png",
+    "dirname": "process",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 1562,
+      "size": 277498,
+      "blocks": 544,
+      "atimeMs": 1532260887000,
+      "mtimeMs": 1361185656000,
+      "ctimeMs": 1522142101000,
+      "birthtimeMs": 1361185656000,
+      "atime": "2018-07-22T12:01:27.000Z",
+      "mtime": "2013-02-18T11:07:36.000Z",
+      "ctime": "2018-03-27T09:15:01.000Z",
+      "birthtime": "2013-02-18T11:07:36.000Z"
+    }
+  },
+  null
+]

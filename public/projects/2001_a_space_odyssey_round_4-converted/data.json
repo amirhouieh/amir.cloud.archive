@@ -1,0 +1,52 @@
+[
+  {
+    "filename": "obstructions_test.pdf",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 203770,
+      "size": 7358963,
+      "blocks": 14376,
+      "atimeMs": 1532260101000,
+      "mtimeMs": 1522872429000,
+      "ctimeMs": 1522872429000,
+      "birthtimeMs": 1363060884000,
+      "atime": "2018-07-22T11:48:21.000Z",
+      "mtime": "2018-04-04T20:07:09.000Z",
+      "ctime": "2018-04-04T20:07:09.000Z",
+      "birthtime": "2013-03-12T04:01:24.000Z"
+    }
+  },
+  null,
+  null,
+  {
+    "filename": "process/gif.gif",
+    "dirname": "process/gif.gif",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 1084,
+      "size": 3232054,
+      "blocks": 6320,
+      "atimeMs": 1532260101000,
+      "mtimeMs": 1363078987000,
+      "ctimeMs": 1522141872000,
+      "birthtimeMs": 1363047381000,
+      "atime": "2018-07-22T11:48:21.000Z",
+      "mtime": "2013-03-12T09:03:07.000Z",
+      "ctime": "2018-03-27T09:11:12.000Z",
+      "birthtime": "2013-03-12T00:16:21.000Z"
+    }
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "aaa.pdf",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 203733,
+      "size": 54169,
+      "blocks": 112,
+      "atimeMs": 1532260156000,
+      "mtimeMs": 1522871471000,
+      "ctimeMs": 1522871471000,
+      "birthtimeMs": 1366745784000,
+      "atime": "2018-07-22T11:49:16.000Z",
+      "mtime": "2018-04-04T19:51:11.000Z",
+      "ctime": "2018-04-04T19:51:11.000Z",
+      "birthtime": "2013-04-23T19:36:24.000Z"
+    }
+  },
+  null
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "filename": "AI-a3_colore.png",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 1940,
+      "size": 1141747,
+      "blocks": 2240,
+      "atimeMs": 1532260737000,
+      "mtimeMs": 1358739907000,
+      "ctimeMs": 1522143386000,
+      "birthtimeMs": 1358739907000,
+      "atime": "2018-07-22T11:58:57.000Z",
+      "mtime": "2013-01-21T03:45:07.000Z",
+      "ctime": "2018-03-27T09:36:26.000Z",
+      "birthtime": "2013-01-21T03:45:07.000Z"
+    }
+  },
+  null,
+  {
+    "filename": "plan_text.ai",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 1956,
+      "size": 1137046,
+      "blocks": 2232,
+      "atimeMs": 1532260739000,
+      "mtimeMs": 1352766232000,
+      "ctimeMs": 1522143421000,
+      "birthtimeMs": 1352739809000,
+      "atime": "2018-07-22T11:58:59.000Z",
+      "mtime": "2012-11-13T00:23:52.000Z",
+      "ctime": "2018-03-27T09:37:01.000Z",
+      "birthtime": "2012-11-12T17:03:29.000Z"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "new_abstract.ai",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 1052,
+      "size": 1965975,
+      "blocks": 3848,
+      "atimeMs": 1532259932000,
+      "mtimeMs": 1365467244000,
+      "ctimeMs": 1522141846000,
+      "birthtimeMs": 1363697337000,
+      "atime": "2018-07-22T11:45:32.000Z",
+      "mtime": "2013-04-09T00:27:24.000Z",
+      "ctime": "2018-03-27T09:10:46.000Z",
+      "birthtime": "2013-03-19T12:48:57.000Z"
+    }
+  }
+]

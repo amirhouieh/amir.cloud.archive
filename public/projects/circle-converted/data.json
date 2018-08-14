@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "screen_shot_2014-06-02_at_4.10.44_pm.tif",
+    "dirname": "",
+    "metadata": {
+      "dev": 16777225,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 4425,
+      "size": 1296492,
+      "blocks": 2536,
+      "atimeMs": 1532261397000,
+      "mtimeMs": 1401718592000,
+      "ctimeMs": 1522143912000,
+      "birthtimeMs": 1401718592000,
+      "atime": "2018-07-22T12:09:57.000Z",
+      "mtime": "2014-06-02T14:16:32.000Z",
+      "ctime": "2018-03-27T09:45:12.000Z",
+      "birthtime": "2014-06-02T14:16:32.000Z"
+    }
+  },
+  null
+]

@@ -1,0 +1,26 @@
+body{
+    font-size: 53px;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+
+small{
+    font-size: 0.25em;
+}
+
+.project-thumb{
+    position: relative;
+}
+
+.thumb {
+    max-width: 50px;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
