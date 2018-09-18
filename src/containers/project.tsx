@@ -1,6 +1,6 @@
 import React from 'react'
 import {withRouteData, Link} from 'react-static'
-import {IFolder, IImage, ImageThumbUrlSrc, ImageType} from '../types'
+import {IFolder, IImage, ImageThumbUrlSrc, ImageType, IRelatedFolder} from '../types'
 import * as _ from 'lodash';
 
 import {ImageThumbWithLink, ImageThumb} from '../components/image-thumbs';
@@ -12,7 +12,8 @@ import {PdfThumbAllPages} from "../components/pdf-thumbs";
 import {MetaTags} from "../components/seo";
 
 interface Props {
-    folder: IFolder
+    folder: IFolder;
+    relatedFolders: IRelatedFolder[]
 }
 
 class ProjectPage extends React.Component<Props, any> {
@@ -21,7 +22,7 @@ class ProjectPage extends React.Component<Props, any> {
     }
 
     render() {
-        const {folder} = this.props;
+        const {folder, relatedFolders} = this.props;
 
         const tags = folder.md.data.tags
             .concat(folder.md.data.year)
@@ -36,7 +37,7 @@ class ProjectPage extends React.Component<Props, any> {
 
         const images =
             _.chain<IImage[]>(folder.images)
-                .filter(img => typeof img.birthtimeMs === "number")
+                // .filter(img => typeof img.birthtimeMs === "number")
                 .groupBy((image: IImage) => {
                     return `/${image.dirpath}`
                 })
@@ -76,6 +77,13 @@ class ProjectPage extends React.Component<Props, any> {
                 <br/>
                 <span>{folder.md.data.title.toUpperCase()}</span>
                 <br/>
+                <br/>
+                <small>related projects: </small>
+                {
+                    relatedFolders.map((rp,index) =>
+                        <Link to={rp.slug}><small>{rp.title}({rp.relationWeight})</small></Link>
+                    )
+                }
                 <br/>
                 <p dangerouslySetInnerHTML={{__html: folder.md.content}}/>
                 {

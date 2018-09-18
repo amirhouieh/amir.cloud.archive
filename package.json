@@ -10,7 +10,7 @@
     "serve": "serve dist -p 3000",
     "data:build:sandbox": "nodemon -e ts --exec 'ts-node' --project tsconfig-data.json data/index.ts",
     "data:build:compile": "tsc --project tsconfig-data.json",
-    "data:build": "node data-script/index.js"
+    "data:build": "node data-script/data/index.js"
   },
   "dependencies": {
     "child-process-promise": "^2.2.1",

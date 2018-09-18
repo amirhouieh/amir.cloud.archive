@@ -12,6 +12,9 @@ import {IFolder, IImage, ImageType, IMarkdown, IRawBasicData} from "../src/types
 const convertCMD = (from: string, to: string) =>
     `convert -density 100 -resize 50x "${from}" "${to}-%0d.jpg"`;
 
+const convertThumbCMD = (from: string, to: string) =>
+    `convert -thumbnail 30x -colors 8 -quality 90 -depth 8 -flatten "${from}" "${to}.png"`;
+
 const imageExtensions = [".png", ".gif", ".jpeg", ".jpg", ".pdf"];
 const projectsDir = "public/projects";
 
@@ -35,7 +38,9 @@ const generateThumbsForImages = async (destFolder: string, files: IImage[]) => {
             const from = path.join(destFolder, file.dirpath, file.filename);
             const to = `${dir}/${file.birthtimeMs? file.birthtimeMs : path.basename(file.filename, file.ext)}`;
             if(file.type !== ImageType.GIF){
-                return await exec(convertCMD(from, to)).then(()=>{
+                const cmd = convertThumbCMD(from, to);
+                // const cmd = convertCMD(from, to);
+                return await exec(cmd).then(()=>{
                     console.log(from);
                     console.log(to);
                     console.log("");
@@ -124,6 +129,7 @@ const getMarkdownForFolder = async (folderpath: string): Promise<IMarkdown> => {
     }
 };
 
+
 (async () => {
     const projectsFolders = readdirSync(projectsDir).filter(f => !f.startsWith("."));
     // const dir = await glob.promise(`${rootDir}/**/*`);
@@ -136,21 +142,11 @@ const getMarkdownForFolder = async (folderpath: string): Promise<IMarkdown> => {
                 const markdown = await getMarkdownForFolder(folderPath);
 
                 //generate thumbnails
-                await generateThumbsForImages(folderPath, images);
-                const thumbs = await glob.promise(`${folderPath}/thumbnails/*.jpg`);
+                // await generateThumbsForImages(folderPath, images);
+                const thumbs = await glob.promise(`${folderPath}/thumbnails/*.png`);
                 const gifsThumbs = images.filter(img => img.type === ImageType.GIF).map(img=>
                     path.join(folderPath, img.dirpath, img.filename)
                 );
-
-                const responsiveImages = images.filter(img => img.isResponsive);
-
-                const thumb = images.length > 0 ?
-                    responsiveImages.length > 0 ?
-                        responsiveImages[ ~~(Math.random() * responsiveImages.length ) ]
-                        :
-                        images[ ~~(Math.random() * images.length ) ]
-                    :
-                    null;
 
                 return {
                     name: folderName,

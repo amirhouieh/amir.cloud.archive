@@ -192,6 +192,7 @@ class Home extends React.Component<Iprops&RouteComponentProps<any>, IState> {
                                 >
                                     {
                                         project.thumbs
+                                            .filter(src => !src.endsWith("gif"))
                                             .map((src,i) => ([
                                                 <img src={src.replace("public/", "")}
                                                      style={{filter: `grayscale(${highlighted ? 0 : 100}%)`}}

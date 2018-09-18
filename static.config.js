@@ -8,20 +8,49 @@ export default {
   getSiteData: async () => {
     const siteData = JSON.parse(await readFileSync('data/site-data.json').toString('utf8'));
     return {
-        ...siteData,
-        path: "",
+      ...siteData,
+      path: "",
     }
   },
   getRoutes: async () => {
     const data = JSON.parse(readFileSync('data/database.min.json').toString('utf8'));
     const thumbs = _.chain(data)
-        .map(folder=>
+        .map(folder =>
             folder.images
                 .filter(img => img.isResponsive && img.dirpath === "")
-                .map(img => path.join(folder.name, img.filename.replace("-0x","-2x")))
+                .map(img => path.join(folder.name, img.filename.replace("-0x", "-2x")))
         )
         .flatten()
         .value();
+
+    const calcRelationWeight = (one, two) => {
+      return two.reduce((a, b) => {
+        return a + (one.indexOf(b) > -1 ? 1 : 0)
+      }, 0)
+    };
+
+    const getRelatedFolders = (folder) => {
+      return data
+          .map(f => ({
+            title: f.md.data.title,
+            slug: f.md.data.slug,
+            tag: f.md.data.tags,
+            name: f.name,
+            relationWeight: calcRelationWeight(folder.md.data.tags, f.md.data.tags),
+            nameMatch: f.name.slice(0, 7) === folder.name.slice(0, 7),
+          }))
+          .filter(f => ( f.nameMatch || f.relationWeight > 0 ) && f.name !== folder.name)
+          .map(f => ({
+            title: f.title,
+            slug: f.slug,
+            relationWeight: f.relationWeight,
+            nameMatch: f.nameMatch
+          }))
+          .sort((a,b) => (b.relationWeight + (b.nameMatch? 100:0)) - (a.relationWeight+ (a.nameMatch? 100:0)))
+              // .sort((a,b) => b.relationWeight - a.relationWeight);
+
+    };
+
 
     const siteThumb = thumbs[~~(Math.random() * thumbs.length)];
 
@@ -50,6 +79,7 @@ export default {
           component: 'src/containers/project',
           getData: () => ({
             folder,
+            relatedFolders: getRelatedFolders(folder)
           }),
         })),
       },

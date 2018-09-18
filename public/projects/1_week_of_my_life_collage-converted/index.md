@@ -6,3 +6,4 @@ text: ""
 year: "2013"
 tags: ["data visualization", "illustration", "generative design", "print", "system"]
 ---
+1 week of my life: Wedensday. This collage is created based on 

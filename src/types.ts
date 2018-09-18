@@ -85,3 +85,11 @@ export interface ImageThumbUrlSrc {
     url: string;
     src: string;
 }
+
+
+export interface IRelatedFolder {
+    title: string;
+    slug: string;
+    relationWeight: number;
+    nameMatch: Boolean;
+}
