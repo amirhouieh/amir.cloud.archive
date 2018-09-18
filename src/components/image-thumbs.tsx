@@ -14,7 +14,7 @@ export const ImageThumb: React.SFC<ThumbProps & HTMLProps<HTMLImageElement>> =
         return (
             <img
                 // id={imageData.birthtimeMs.toString()}
-                src={urlsrc.src}
+                src={`../${urlsrc.src}`}
                 alt={path.basename(imageData.filename, imageData.ext)}
                 title={imageData.birthtime !== null ? imageData.birthtime : ""}
                 width={width}
