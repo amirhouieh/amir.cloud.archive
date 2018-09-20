@@ -8,7 +8,7 @@
     "stage": "react-static build --staging",
     "build": "react-static build",
     "serve": "serve dist -p 3000",
-    "data:build:sandbox": "nodemon -e ts --exec 'ts-node' --project tsconfig-data.json data/index.ts",
+    "data:sandbox": "nodemon -e ts --exec 'ts-node' --project tsconfig-data.json data/sandbox.ts",
     "data:build:compile": "tsc --project tsconfig-data.json",
     "data:build": "node data-script/data/index.js"
   },
@@ -23,7 +23,8 @@
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-static": "^5.9.7",
-    "slugify": "^1.3.0"
+    "slugify": "^1.3.0",
+    "webloc-parser": "^0.1.1"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

@@ -5,8 +5,9 @@ import * as path from "path";
 import * as _ from "lodash";
 import {exec} from 'child-process-promise';
 const sequential = require('promise-sequential');
+import * as weblocParse from 'webloc-parser';
 
-import {IFolder, IImage, ImageType, IMarkdown, IRawBasicData} from "../src/types";
+import {IFolder, IImage, ImageType, IMarkdown, IRawBasicData, IVideo} from "../src/types";
 
 
 const convertCMD = (from: string, to: string) =>
@@ -52,7 +53,6 @@ const generateThumbsForImages = async (destFolder: string, files: IImage[]) => {
 
 
 const getImagesFromFolder = async (folderpath: string, folderName: string): Promise<IImage[]> => {
-
     const dataPath = path.join(folderpath, "data.json");
     const filesDataRaw = readFileSync(dataPath).toString("utf8");
     let filesData: IRawBasicData[] = JSON.parse(filesDataRaw);
@@ -66,7 +66,7 @@ const getImagesFromFolder = async (folderpath: string, folderName: string): Prom
 
     const files = await glob.promise(`${folderpath}/**/*.*`);
 
-    const fileObjects = _.chain(files)
+    return _.chain(files)
         .filter((filepath: string) => {
             const ext = path.extname(filepath).toLowerCase();
             const basename = path.basename(filepath, ext);
@@ -85,10 +85,10 @@ const getImagesFromFolder = async (folderpath: string, folderName: string): Prom
             const isResponsive = basename.endsWith("0x");
             const type = getImageType(ext);
 
-            const dirpath = relPath.split(path.sep).slice(0,-1).join(path.sep);
+            const dirpath = relPath.split(path.sep).slice(0, -1).join(path.sep);
 
-            const what = isResponsive?
-                `${dirpath}/${basename}`.slice(0,-3)
+            const what = isResponsive ?
+                `${dirpath}/${basename}`.slice(0, -3)
                 :
                 `${dirpath}/${basename}`;
 
@@ -105,14 +105,30 @@ const getImagesFromFolder = async (folderpath: string, folderName: string): Prom
                 isResponsive,
                 filename,
                 dirpath: relPath.replace(path.basename(relativePath), ""),
-                birthtime: data? data.metadata.birthtime: null,
-                birthtimeMs: data? data.metadata.birthtimeMs : null
+                birthtime: data ? data.metadata.birthtime : null,
+                birthtimeMs: data ? data.metadata.birthtimeMs : null
             }
         })
-        .filter(img=> !img.dirpath.startsWith("_"))
+        .filter(img => !img.dirpath.startsWith("_"))
         .value();
+};
 
-    return fileObjects;
+const getVideosFromFolder = async (folderpath: string, folderName: string): Promise<IVideo[]> => {
+    const files = await glob.promise(`${folderpath}/**/*.webloc`);
+
+    return Promise.all(
+        files.map(async (videoPath: string): Promise<IVideo> => {
+            const relPath = videoPath.replace(`${folderpath}/`, "");
+            const relativePath = videoPath.replace(`${projectsDir}/${folderName}/`, "");
+            const url = await weblocParse.getUrlFromFile(videoPath);
+            console.log(videoPath);
+            console.log(url);
+            return {
+                dirpath: relPath.replace(path.basename(relativePath), ""),
+                url
+            }
+        })
+    )
 };
 
 const getMarkdownForFolder = async (folderpath: string): Promise<IMarkdown> => {
@@ -139,6 +155,7 @@ const getMarkdownForFolder = async (folderpath: string): Promise<IMarkdown> => {
             .map((folderName) => async() => {
                 const folderPath = path.join(projectsDir, folderName);
                 const images = await getImagesFromFolder(folderPath, folderName);
+                const videos = await getVideosFromFolder(folderPath, folderName);
                 const markdown = await getMarkdownForFolder(folderPath);
 
                 //generate thumbnails
@@ -152,7 +169,7 @@ const getMarkdownForFolder = async (folderpath: string): Promise<IMarkdown> => {
                     name: folderName,
                     md: markdown,
                     images: images,
-                    videos: [],
+                    videos: videos,
                     thumbs: [...thumbs, ...gifsThumbs]
                 }
 

@@ -1811,7 +1811,12 @@
         "birthtimeMs": null
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "dirpath": "",
+        "url": "https://www.youtu.be/4eznJw25ZMQ"
+      }
+    ],
     "thumbs": [
       "public/projects/2001_a_space_odyssey_round_3-converted/thumbnails/1362938275000.png",
       "public/projects/2001_a_space_odyssey_round_3-converted/thumbnails/1364140422000.png",
@@ -3298,7 +3303,12 @@
         "birthtimeMs": null
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "dirpath": "",
+        "url": "https://www.youtu.be/kw6XqOJUhbY"
+      }
+    ],
     "thumbs": [
       "public/projects/blow_up_-converted/thumbnails/1351193955000.png",
       "public/projects/blow_up_-converted/thumbnails/1351193956000.png",
@@ -4155,7 +4165,12 @@
         "birthtimeMs": null
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "dirpath": "",
+        "url": "https://www.youtu.be/1DCbm5eeDwM"
+      }
+    ],
     "thumbs": [
       "public/projects/drawing_machine-converted/thumbnails/1364039928000.png",
       "public/projects/drawing_machine-converted/thumbnails/1364039966000.png",
@@ -6625,14 +6640,14 @@
         "ext": ".gif",
         "isResponsive": false,
         "filename": "gif.gif",
-        "dirpath": "proccess/",
+        "dirpath": "",
         "birthtime": null,
         "birthtimeMs": null
       }
     ],
     "videos": [],
     "thumbs": [
-      "public/projects/letter_animation_-converted/proccess/gif.gif"
+      "public/projects/letter_animation_-converted/gif.gif"
     ]
   },
   {
@@ -6755,7 +6770,12 @@
         "birthtimeMs": null
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "dirpath": "",
+        "url": "https://www.youtu.be/UTXIcFhldf8"
+      }
+    ],
     "thumbs": [
       "public/projects/mobile_poster-converted/thumbnails/1401735229000.png"
     ]
@@ -8578,15 +8598,6 @@
         "dirpath": "html/img/",
         "birthtime": "2014-10-09T19:25:18.000Z",
         "birthtimeMs": 1412882718000
-      },
-      {
-        "type": "OTHER",
-        "ext": ".png",
-        "isResponsive": false,
-        "filename": "index.html.png",
-        "dirpath": "html/",
-        "birthtime": "2014-09-18T10:13:13.000Z",
-        "birthtimeMs": 1411035193000
       },
       {
         "type": "OTHER",
@@ -10601,7 +10612,12 @@
         "birthtimeMs": null
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "dirpath": "",
+        "url": "https://www.youtu.be/fTrZSsOXS5I"
+      }
+    ],
     "thumbs": [
       "public/projects/self_portrait-converted/thumbnails/1361185656000.png"
     ]
@@ -11462,7 +11478,20 @@
         "birthtimeMs": null
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "dirpath": "",
+        "url": "https://youtu.be/QFoVjDO468o"
+      },
+      {
+        "dirpath": "process/",
+        "url": "https://youtu.be/JGKqm1o9-Zo"
+      },
+      {
+        "dirpath": "process/",
+        "url": "https://youtu.be/Z_ic3U7i_9E"
+      }
+    ],
     "thumbs": [
       "public/projects/text_and_space-converted/thumbnails/1368441344000.png",
       "public/projects/text_and_space-converted/thumbnails/1368752746000.png",

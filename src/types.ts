@@ -18,8 +18,9 @@ export interface IImage extends IFileEntity{
     dirpath: string;
 }
 
-export interface IVideo extends IFileEntity {
+export interface IVideo {
     url: string;
+    dirpath: string;
 }
 
 export interface IMarkdownFrontmatter {

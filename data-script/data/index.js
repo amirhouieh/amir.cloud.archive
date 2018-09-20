@@ -15,6 +15,7 @@ const path = require("path");
 const _ = require("lodash");
 const child_process_promise_1 = require("child-process-promise");
 const sequential = require('promise-sequential');
+const weblocParse = require("webloc-parser");
 const types_1 = require("../src/types");
 const convertCMD = (from, to) => `convert -density 100 -resize 50x "${from}" "${to}-%0d.jpg"`;
 const convertThumbCMD = (from, to) => `convert -thumbnail 30x -colors 8 -quality 90 -depth 8 -flatten "${from}" "${to}.png"`;
@@ -55,7 +56,7 @@ const getImagesFromFolder = (folderpath, folderName) => __awaiter(this, void 0, 
         .filter(d => d)
         .map(d => (Object.assign({}, d, { dirname: `${d.dirname}/${path.basename(d.filename, path.extname(d.filename))}` })));
     const files = yield glob.promise(`${folderpath}/**/*.*`);
-    const fileObjects = _.chain(files)
+    return _.chain(files)
         .filter((filepath) => {
         const ext = path.extname(filepath).toLowerCase();
         const basename = path.basename(filepath, ext);
@@ -91,7 +92,20 @@ const getImagesFromFolder = (folderpath, folderName) => __awaiter(this, void 0, 
     })
         .filter(img => !img.dirpath.startsWith("_"))
         .value();
-    return fileObjects;
+});
+const getVideosFromFolder = (folderpath, folderName) => __awaiter(this, void 0, void 0, function* () {
+    const files = yield glob.promise(`${folderpath}/**/*.webloc`);
+    return Promise.all(files.map((videoPath) => __awaiter(this, void 0, void 0, function* () {
+        const relPath = videoPath.replace(`${folderpath}/`, "");
+        const relativePath = videoPath.replace(`${projectsDir}/${folderName}/`, "");
+        const url = yield weblocParse.getUrlFromFile(videoPath);
+        console.log(videoPath);
+        console.log(url);
+        return {
+            dirpath: relPath.replace(path.basename(relativePath), ""),
+            url
+        };
+    })));
 });
 const getMarkdownForFolder = (folderpath) => __awaiter(this, void 0, void 0, function* () {
     const mdPath = path.join(folderpath, "index.md");
@@ -112,16 +126,17 @@ const getMarkdownForFolder = (folderpath) => __awaiter(this, void 0, void 0, fun
         .map((folderName) => () => __awaiter(this, void 0, void 0, function* () {
         const folderPath = path.join(projectsDir, folderName);
         const images = yield getImagesFromFolder(folderPath, folderName);
+        const videos = yield getVideosFromFolder(folderPath, folderName);
         const markdown = yield getMarkdownForFolder(folderPath);
         //generate thumbnails
-        yield generateThumbsForImages(folderPath, images);
+        // await generateThumbsForImages(folderPath, images);
         const thumbs = yield glob.promise(`${folderPath}/thumbnails/*.png`);
         const gifsThumbs = images.filter(img => img.type === types_1.ImageType.GIF).map(img => path.join(folderPath, img.dirpath, img.filename));
         return {
             name: folderName,
             md: markdown,
             images: images,
-            videos: [],
+            videos: videos,
             thumbs: [...thumbs, ...gifsThumbs]
         };
     })));

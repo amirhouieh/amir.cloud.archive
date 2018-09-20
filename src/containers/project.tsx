@@ -1,6 +1,6 @@
 import React from 'react'
 import {withRouteData, Link} from 'react-static'
-import {IFolder, IImage, ImageThumbUrlSrc, ImageType, IRelatedFolder} from '../types'
+import {IFolder, IImage, ImageThumbUrlSrc, ImageType, IRelatedFolder, IVideo} from '../types'
 import * as _ from 'lodash';
 
 import {ImageThumbWithLink, ImageThumb} from '../components/image-thumbs';
@@ -15,6 +15,14 @@ interface Props {
     folder: IFolder;
     relatedFolders: IRelatedFolder[]
 }
+
+
+const createEmbedUrl = (url: string) => {
+  let parts = url.split("/");
+  const id = parts.pop();
+  const base = parts.join("/");
+  return `https://www.youtube.com/embed/${id}?autoplay=1`;
+};
 
 class ProjectPage extends React.Component<Props, any> {
     constructor(props: Props) {
@@ -43,10 +51,21 @@ class ProjectPage extends React.Component<Props, any> {
                 })
                 .value();
 
+        const videos =
+            _.chain<IVideo[]>(folder.videos)
+                .groupBy((video: IVideo) => {
+                    return `/${video.dirpath}`
+                })
+                .value();
+
         const rootImages = images["/"]? images["/"]: [];
         const htmlImages = images["/html/"]? images["/html/"]: [];
-        const restImages = _.omit(images, ["/", "/html/"]);
+        const restImages = _.omit(images, ["/", "/html/", "/thumbnails/"]);
         const projectUrl = createProjectSubUrl(folder);
+
+        const rootVideos = videos["/"]? videos["/"]: [];
+        const restVideos = _.omit(videos, ["/"]);
+
 
         const projectImage =  htmlImages.concat(rootImages)[0];
 
@@ -65,6 +84,17 @@ class ProjectPage extends React.Component<Props, any> {
                                             urlsrc={urlsrcCreator(imageData, folder.name)}
                         />
                 );
+
+        const renderVideo = (width: number, height: number) =>
+            (videoData: IVideo, index: number) => (
+                <iframe key={`video-${index}`}
+                        width={width}
+                        height={height}
+                        src={createEmbedUrl(videoData.url)}
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen />
+            );
 
         return (
             <div>
@@ -102,10 +132,29 @@ class ProjectPage extends React.Component<Props, any> {
                         ))
                 }
                 <br/>
+                {
+                    (restVideos)
+                    &&
+                    Object.keys(restVideos)
+                        .map((videoGroupName, index) => (
+                            <span key={`vg-${index}`}>
+                                <small>{videoGroupName.slice(0, videoGroupName.length - 1)}</small>
+                                <span>&ensp;</span>
+                                {
+                                    restVideos[videoGroupName].map(renderVideo(120, 70))
+                                }
+                                <span>&emsp;&emsp;</span>
+                            </span>
+                        ))
+                }
                 <br/>
                 <br/>
                 <br/>
                 <br/>
+                <br/>
+                {
+                    rootVideos.map(renderVideo(600, 400))
+                }
                 {
                     (htmlImages.length > 0) &&
                     [
@@ -125,7 +174,6 @@ class ProjectPage extends React.Component<Props, any> {
                         ))
                     ]
                 }
-
                 {
                     rootImages.map(renderImage("600", false, createImageThumbUrlSrc1x))
                 }
