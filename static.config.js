@@ -52,8 +52,6 @@ export default {
     };
 
 
-    const siteThumb = thumbs[~~(Math.random() * thumbs.length)];
-
     const indexData = data
         .map(folder => ({
           thumbs: folder.thumbs,
@@ -72,7 +70,7 @@ export default {
         component: 'src/containers/home',
         getData: () => ({
           projects: indexData,
-          siteThumb
+          siteThumb: "/site-thumb.png"
         }),
         children: data.map(folder => ({
           path: `/${folder.md.data.slug}`,
