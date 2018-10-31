@@ -1,25 +1,32 @@
 import * as React from "react";
 import {Head, withSiteData} from "react-static";
+import {ISiteData} from "../types";
 
 interface IProps {
-    title: string;
-    keywords: string[];
-    description: string;
-    baseUrl: string;
-    path: string;
-    imageUrl: string;
-    baseKeywords: string[];
+    siteData: ISiteData
+    title?: string;
+    keywords?: string;
+    description?: string;
+    path?: string;
+    imagePath?: string;
 }
 
 const MetaTagsComponent: React.SFC<IProps> = (props) => {
-    const {title, keywords, description, path, baseUrl, imageUrl, baseKeywords} = props;
-    const url = `${baseUrl}${path}`;
-    const image = `${baseUrl}${imageUrl}`;
-    const tags = baseKeywords.concat(keywords);
+    const {
+        siteData,
+        path = "",
+        ...custom
+    } = props;
+
+    const imageUrl = custom.imagePath? `${siteData.baseUrl}/${custom.imagePath}` : `${siteData.baseUrl}/${siteData.siteThumb}`;
+    const url = `${siteData.baseUrl}${path}`;
+    const tags = custom.keywords ? custom.keywords : siteData.baseKeywords;
+    const description = custom.description? custom.description : siteData.description_seo;
+    const title = custom.title? custom.title : siteData.title;
 
     return (
         <Head>
-            <meta name={`keywords`} content={tags.join()}/>
+            <meta name={`keywords`} content={tags}/>
             <meta
                 name={`description`}
                 content={`${description}`}
@@ -34,15 +41,15 @@ const MetaTagsComponent: React.SFC<IProps> = (props) => {
             <meta name={`identifier-URL`} content={`${url}`}/>
             <meta name={`og:title`} content={`${title}`}/>
             <meta name={`og:url`} content={`${url}`}/>
-            <meta name={`og:image`} content={`${image}`}/>
+            <meta name={`og:image`} content={`${imageUrl}`}/>
             <meta name={`og:site_name`} content={`amir houieh`}/>
             <meta name={`og:description`} content={`${description}`} />
             <title>{title}</title>
 
             <link
                 rel="icon"
-                type={`image/`}
-                href={``}
+                type={`image/png`}
+                href={`${siteData.baseUrl}/${siteData.siteThumb}`}
             />
 
             <script type="application/ld+json">{`

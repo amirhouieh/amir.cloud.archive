@@ -94,3 +94,12 @@ export interface IRelatedFolder {
     relationWeight: number;
     nameMatch: Boolean;
 }
+
+export interface ISiteData {
+    description: string;
+    description_seo: string;
+    baseKeywords: string;
+    title: string;
+    baseUrl: string;
+    siteThumb: string;
+}

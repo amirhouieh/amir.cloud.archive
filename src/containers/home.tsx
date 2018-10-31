@@ -122,9 +122,6 @@ class Home extends React.Component<Iprops&RouteComponentProps<any>, IState> {
 
         return (
             <div ref={c => this.contentNode = c}>
-                <MetaTags imageUrl={siteThumb}
-                          keywords={tags}
-                />
                 <input onChange={(e) => this.onSearch(e.target.value)}
                        placeholder={"search ..."}
                        type="search"

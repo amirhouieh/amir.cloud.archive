@@ -101,7 +101,8 @@ class ProjectPage extends React.Component<Props, any> {
                 <MetaTags title={`amir houieh / ${folder.md.data.title}`}
                           keywords={folder.md.data.tags}
                           description={folder.md.content}
-                          imageUrl={projectImage? createX2Url(projectImage, folder.name): ""}
+                          imagePath={projectImage? createX2Url(projectImage, folder.name): null}
+                          path={folder.md.data.slug}
                 />
                 <span>{tags}</span>
                 <br/>

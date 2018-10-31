@@ -8,7 +8,7 @@ export default {
   getSiteData: async () => {
     const siteData = JSON.parse(await readFileSync('data/site-data.json').toString('utf8'));
     return {
-      ...siteData,
+      siteData,
       path: "",
     }
   },
