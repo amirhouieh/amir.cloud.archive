@@ -100,28 +100,27 @@ export default {
                 <Head>
                     <meta charSet="UTF-8"/>
                     <meta httpEquiv="content-type" content="text/html; charset=utf-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
                     <meta name="resource-type" content="document"/>
                     <meta name="distribution" content="Global"/>
                     <meta name="rating" content="General"/>
-                    <meta name="robots" content="INDEX,FOLLOW"/>
-                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-                    <link rel="apple-touch-icon" sizes="57x57" href="faveicon/apple-icon-57x57.png"/>
-                    <link rel="apple-touch-icon" sizes="60x60" href="faveicon/apple-icon-60x60.png"/>
-                    <link rel="apple-touch-icon" sizes="72x72" href="faveicon/apple-icon-72x72.png"/>
-                    <link rel="apple-touch-icon" sizes="76x76" href="faveicon/apple-icon-76x76.png"/>
-                    <link rel="apple-touch-icon" sizes="114x114" href="faveicon/apple-icon-114x114.png"/>
-                    <link rel="apple-touch-icon" sizes="120x120" href="faveicon/apple-icon-120x120.png"/>
-                    <link rel="apple-touch-icon" sizes="144x144" href="faveicon/apple-icon-144x144.png"/>
-                    <link rel="apple-touch-icon" sizes="152x152" href="faveicon/apple-icon-152x152.png"/>
-                    <link rel="apple-touch-icon" sizes="180x180" href="faveicon/apple-icon-180x180.png"/>
-                    <link rel="icon" type="image/png" sizes="192x192" href="faveicon/android-icon-192x192.png"/>
-                    <link rel="icon" type="image/png" sizes="32x32" href="faveicon/favicon-32x32.png"/>
-                    <link rel="icon" type="image/png" sizes="96x96" href="faveicon/favicon-96x96.png"/>
-                    <link rel="icon" type="image/png" sizes="16x16" href="faveicon/favicon-16x16.png"/>
-                    <link rel="manifest" href="faveicon/manifest.json"/>
+                    <link rel="apple-touch-icon" sizes="57x57" href="https://amir.cloud/favicon/apple-icon-57x57.png"/>
+                    <link rel="apple-touch-icon" sizes="60x60" href="https://amir.cloud/favicon/apple-icon-60x60.png"/>
+                    <link rel="apple-touch-icon" sizes="72x72" href="https://amir.cloud/favicon/apple-icon-72x72.png"/>
+                    <link rel="apple-touch-icon" sizes="76x76" href="https://amir.cloud/favicon/apple-icon-76x76.png"/>
+                    <link rel="apple-touch-icon" sizes="114x114" href="https://amir.cloud/favicon/apple-icon-114x114.png"/>
+                    <link rel="apple-touch-icon" sizes="120x120" href="https://amir.cloud/favicon/apple-icon-120x120.png"/>
+                    <link rel="apple-touch-icon" sizes="144x144" href="https://amir.cloud/favicon/apple-icon-144x144.png"/>
+                    <link rel="apple-touch-icon" sizes="152x152" href="https://amir.cloud/favicon/apple-icon-152x152.png"/>
+                    <link rel="apple-touch-icon" sizes="180x180" href="https://amir.cloud/favicon/apple-icon-180x180.png"/>
+                    <link rel="icon" type="image/png" sizes="192x192" href="https://amir.cloud/favicon/android-icon-192x192.png"/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="https://amir.cloud/favicon/favicon-32x32.png"/>
+                    <link rel="icon" type="image/png" sizes="96x96" href="https://amir.cloud/favicon/favicon-96x96.png"/>
+                    <link rel="icon" type="image/png" sizes="16x16" href="https://amir.cloud/favicon/favicon-16x16.png"/>
+                    <link rel="manifest" href="https://amir.cloud/favicon/manifest.json"/>
                     <meta name="msapplication-TileColor" content="#ffffff"/>
-                    <meta name="msapplication-TileImage" content="faveicon/ms-icon-144x144.png"/>
+                    <meta name="msapplication-TileImage" content="https://amir.cloud/favicon/ms-icon-144x144.png"/>
                     <meta name="theme-color" content="#ffffff"/>
 
                     {renderMeta.styleTags}

@@ -26,11 +26,9 @@ const MetaTagsComponent: React.SFC<IProps> = (props) => {
 
     return (
         <Head>
+            <title>{title}</title>
             <meta name={`keywords`} content={tags}/>
-            <meta
-                name={`description`}
-                content={`${description}`}
-            />
+            <meta name={`description`} content={`${description}`} />
             <meta name={`copyright`} content={`amir.cloud`}/>
             <meta name={`language`} content={`EN`}/>
             <meta name={`Classification`} content={`Design/Programming`}/>
@@ -44,11 +42,11 @@ const MetaTagsComponent: React.SFC<IProps> = (props) => {
             <meta name={`og:image`} content={`${imageUrl}`}/>
             <meta name={`og:site_name`} content={`amir houieh`}/>
             <meta name={`og:description`} content={`${description}`} />
-            <title>{title}</title>
+            <meta name="twitter:image" content={imageUrl} />
 
             <link rel="shortcut icon"
                   type="image/x-icon"
-                  href={`${siteData.baseUrl}/${siteData.siteThumb}`}
+                  href={`favicon/android-icon-192x192.png`}
             />
 
             <script type="application/ld+json">{`
