@@ -97,7 +97,7 @@ export default {
             } = this.props;
 
             return (
-                <Html lang={"en"}>
+                <Html lang={"en"} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
                 <Head>
                     <meta charSet="UTF-8"/>
                     <meta httpEquiv="content-type" content="text/html; charset=utf-8"/>

@@ -43,6 +43,7 @@ const MetaTagsComponent: React.SFC<IProps> = (props) => {
             <meta name={`og:site_name`} content={`amir houieh`}/>
             <meta name={`og:description`} content={`${description}`} />
             <meta name="twitter:image" content={imageUrl} />
+            <meta name="image" property="og:image" />
 
             <link rel="shortcut icon"
                   type="image/x-icon"
