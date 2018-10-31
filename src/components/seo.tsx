@@ -46,10 +46,9 @@ const MetaTagsComponent: React.SFC<IProps> = (props) => {
             <meta name={`og:description`} content={`${description}`} />
             <title>{title}</title>
 
-            <link
-                rel="icon"
-                type={`image/png`}
-                href={`${siteData.baseUrl}/${siteData.siteThumb}`}
+            <link rel="shortcut icon"
+                  type="image/x-icon"
+                  href={`${siteData.baseUrl}/${siteData.siteThumb}`}
             />
 
             <script type="application/ld+json">{`
