@@ -1,7 +1,7 @@
-import React from 'recat'
+import React from "react";
 import path from 'path'
 import {readFileSync} from 'fs'
-import _ from 'lodash'
+import _ from 'lodash';
 
 export default {
     entry: path.join(__dirname, 'src', 'index.tsx'),
