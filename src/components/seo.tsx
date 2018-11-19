@@ -54,7 +54,7 @@ const MetaTagsComponent: React.SFC<IProps> = (props) => {
               {
                 "@context": "https://json-ld.org/contexts/person.jsonld",
                 "name": "Amir Houieh",
-                "born": "1940-10-09",
+                "born": "1987-03-22",
                 "url": "amir.houieh",
                 "contactPoint": {
                   "@type": "ContactPoint",
