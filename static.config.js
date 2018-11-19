@@ -4,7 +4,7 @@ import {readFileSync} from 'fs'
 import _ from 'lodash';
 
 export default {
-    siteRoot: `https://amir.cloud`,
+    siteRoot: `https://archive.amir.cloud`,
     entry: path.join(__dirname, 'src', 'index.tsx'),
     getSiteData: async () => {
         const siteData = JSON.parse(await readFileSync('data/site-data.json').toString('utf8'));
