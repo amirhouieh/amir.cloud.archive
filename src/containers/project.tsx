@@ -4,6 +4,7 @@ import {IFolder, IImage, ImageThumbUrlSrc, ImageType, IRelatedFolder, IVideo} fr
 import * as _ from 'lodash';
 
 import {ImageThumbWithLink, ImageThumb} from '../components/image-thumbs';
+
 import {
     createProjectSubUrl, createImageThumbUrlSrc1x, createImageThumbUrlSrc0x, createPdfUrl,
     createX2Url
@@ -61,7 +62,7 @@ class ProjectPage extends React.Component<Props, any> {
         const rootImages = images["/"]? images["/"]: [];
         const htmlImages = images["/html/"]? images["/html/"]: [];
         const restImages = _.omit(images, ["/", "/html/", "/thumbnails/"]);
-        const projectUrl = createProjectSubUrl(folder);
+        const projectStandAloneUrl = createProjectSubUrl(folder);
 
         const rootVideos = videos["/"]? videos["/"]: [];
         const restVideos = _.omit(videos, ["/"]);
@@ -159,12 +160,12 @@ class ProjectPage extends React.Component<Props, any> {
                 {
                     (htmlImages.length > 0) &&
                     [
-                        <a href={projectUrl} target="_blank" title={projectUrl}>{projectUrl}</a>,
+                        <a href={projectStandAloneUrl} target="_blank" title={projectStandAloneUrl}>{projectStandAloneUrl}</a>,
                         <br/>,
                         htmlImages.map((imageData, i) => (
-                            <a href={projectUrl}
+                            <a href={projectStandAloneUrl}
                                target="_blank"
-                               title={projectUrl}
+                               title={projectStandAloneUrl}
                                key={`hi-${i}`}
                             >
                                 <ImageThumb width={"50%"}
@@ -176,7 +177,7 @@ class ProjectPage extends React.Component<Props, any> {
                     ]
                 }
                 {
-                    rootImages.map(renderImage("600", false, createImageThumbUrlSrc1x))
+                    rootImages.map(renderImage(600, false, createImageThumbUrlSrc1x))
                 }
             </div>
         )

@@ -1,14 +1,10 @@
-///<reference path="../../node_modules/@types/react/index.d.ts"/>
-///<reference path="../../node_modules/@types/react-router/index.d.ts"/>
 import React from 'react'
 import {withRouteData} from 'react-static'
-import {IImage, IMarkdownFrontmatter} from "../types";
+import {IMarkdownFrontmatter} from "../types";
 import {Link} from "react-router-dom";
 import * as _ from 'lodash';
 import {textNodesUnder} from "../utils";
 import {RouteComponentProps, withRouter} from "react-router";
-import {PdfThumbAllPages} from "../components/pdf-thumbs";
-import {MetaTags} from "../components/seo";
 
 interface IProject {
     data: IMarkdownFrontmatter;

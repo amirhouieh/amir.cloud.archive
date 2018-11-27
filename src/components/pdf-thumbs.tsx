@@ -1,7 +1,8 @@
 import React from "react";
 import {ThumbProps} from "../types";
 import PDFJS from "pdfjs-dist";
-
+import {Link} from "react-static";
+import {join} from "path";
 
 
 interface IProps {
@@ -64,8 +65,10 @@ export class PdfThumbAllPages extends React.Component<IProps, IState>{
         const {url} = this.props;
         const {numPages} = this.state;
         this.canvases = [];
+        const baseUrl = process.env.NODE_ENV === "dev"? "http://localhost:3000": "https://archive.amir.cloud";
+
         return (
-            <a href={url} target={"_blank"}>
+            <a href={join(baseUrl, url)} target={"_blank"}>
                 {
                     new Array(numPages).fill(null).map((_, index) =>
                         <canvas

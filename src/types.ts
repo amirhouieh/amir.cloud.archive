@@ -77,7 +77,7 @@ export interface IRawBasicData {
 
 export interface ThumbProps {
     imageData: IImage,
-    folderName: string,
+    folderName?: string,
     urlsrc?: ImageThumbUrlSrc;
 }
 
