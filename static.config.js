@@ -124,6 +124,15 @@ export default {
                     <meta name="msapplication-TileImage" content="https://amir.cloud/favicon/ms-icon-144x144.png"/>
                     <meta name="theme-color" content="#ffffff"/>
 
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129679487-3" />
+                    <script dangerouslySetInnerHTML={{
+                        __html: `window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'UA-129679487-3');`
+                    }}/>
+
                     {renderMeta.styleTags}
                 </Head>
                 <Body>
