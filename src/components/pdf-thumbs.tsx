@@ -1,7 +1,6 @@
 import React from "react";
 import {ThumbProps} from "../types";
 import PDFJS from "pdfjs-dist";
-import {Link} from "react-static";
 import {join} from "path";
 
 
@@ -28,10 +27,13 @@ export class PdfThumbAllPages extends React.Component<IProps, IState>{
     componentDidMount(){
         const {width, url, sameSize=false} = this.props;
 
+        if(process.env.NODE_ENV !== "development"){
+            PDFJS.GlobalWorkerOptions.workerSrc = "/"
+        }
+
         PDFJS.getDocument(url).then(pdf => {
             this.setState({ numPages: pdf.numPages }, ()=>{
                 const { canvases } = this;
-
                 canvases.forEach(async (canvas, index) => {
                     try{
                         const page = await pdf.getPage(index+1);
@@ -54,10 +56,7 @@ export class PdfThumbAllPages extends React.Component<IProps, IState>{
                         console.log(err);
                     }
                 });
-
             });
-
-
         });
     }
 
