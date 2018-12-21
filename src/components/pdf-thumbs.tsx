@@ -64,7 +64,7 @@ export class PdfThumbAllPages extends React.Component<IProps, IState>{
         const {url} = this.props;
         const {numPages} = this.state;
         this.canvases = [];
-        const baseUrl = process.env.NODE_ENV === "dev"? "http://localhost:3000": "https://archive.amir.cloud";
+        const baseUrl = process.env.NODE_ENV === "dev"? "http://localhost:3000": "../";
         return (
             <a href={join(baseUrl, url)} target={"_blank"}>
                 {
