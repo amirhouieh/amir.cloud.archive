@@ -83,6 +83,7 @@ class ProjectPage extends React.Component<Props, any> {
                                             folderName={folder.name}
                                             width={width}
                                             urlsrc={urlsrcCreator(imageData, folder.name)}
+                                            key={`image-${index}`}
                         />
                 );
 

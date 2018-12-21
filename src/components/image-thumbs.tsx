@@ -28,10 +28,10 @@ export const ImageThumbWithLink: React.SFC<ThumbProps & HTMLProps<HTMLImageEleme
             process.env.NODE_ENV === "development"
             ||
             process.env.NODE_ENV === "staging"
-        ) ? "http://localhost:3000": "https//:archive.amir.cloud";
+        ) ? "http://localhost:3000": "";
 
         return (
-            <a href={path.join(baseUrl, props.urlsrc.url)} target={"_blank"}>
+            <a className={"lti"} href={path.join(baseUrl, props.urlsrc.url)} target={"_blank"}>
                 <ImageThumb {...props}/>
             </a>
         )
