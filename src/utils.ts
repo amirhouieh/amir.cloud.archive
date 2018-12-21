@@ -82,5 +82,6 @@ export const createImageThumbUrlSrc0x = (imageData: IImage, folderName: string):
     return {url, src};
 };
 
-export const createProjectSubUrl = (folder: IFolder) =>
-    `https://${folder.md.data.slug.split("_").join("-")}.amir.cloud`;
+export const createProjectSubUrl = (folder: IFolder) => {
+    return `https://${folder.md.data.slug.split("_").join("-")}.amir.cloud`;
+};
